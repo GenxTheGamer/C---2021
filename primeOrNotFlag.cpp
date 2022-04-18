@@ -1,21 +1,22 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
-
-// Program for checking whether given number is prime or not. Using break statement in loops.
 
 int main()
 {
-    int n, i;
+    int n;
     cin >> n;
-    for (i = 2; i < n; i++)
+    bool flag = 0;
+    for (int i = 2; i < sqrt(n); i++)
     {
         if (n % i == 0)
         {
             cout << "Non Prime" << endl;
+            flag = 1;
             break;
         }
     }
-    if (i == n)
+    if (flag == 0)
     {
         cout << "Prime" << endl;
     }
